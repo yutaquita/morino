@@ -1,6 +1,14 @@
-import platform
-print(platform.python_version())
-print("thank you")
-print("very much")
+from janome.tokenizer import Tokenizer
 
-print("2nd times of commit")
+t = Tokenizer()
+
+s = 'すもももももももものうち'
+
+print(type(t.tokenize(s)))
+#<class 'list'>
+
+print(type(t.tokenize(s)[0]))
+#<class 'janome.tokenizer.Tokne'>
+
+for token in t.tokenize(s):
+	print(token)
