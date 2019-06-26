@@ -1,5 +1,8 @@
 import csv,tweepy,TwitterAPIKey
 
+#
+#Developer informations
+#
 consumer_key = "●"
 consumer_secret = "●"
 access_token = "●"
@@ -8,11 +11,21 @@ access_token_secret = "●"
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
-OUT_FILE="/fullpass/filename.csv"
+#
+#need to change
+#
+OUT_FILE="/full-pass/file-name.csv"
 
 api=tweepy.API(auth)
 
+#
+# to collect tweet for 100*100
+#
 ow=csv.writer(open(OUT_FILE,'w',encoding="utf-8"),delimiter="\t")
+
+#
+#change keywords whatever you want to
+#
 keyword="keyword"
 search_count=100
 repeat_count=100
@@ -27,4 +40,4 @@ for i in range(repeat_count):
     
 for tw in search_result:
     ow.writerow(tw)
-!osascript -e 'display dialog "終わったよ！"' 
+!osascript -e 'display dialog "Done!!"' 
