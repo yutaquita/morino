@@ -8,12 +8,12 @@ access_token_secret = "●"
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
-OUT_FILE="/Users/mocchino/Downloads/沖縄補選/屋良（フルネーム）/屋良朝博7.csv"
+OUT_FILE="/fullpass/filename.csv"
 
 api=tweepy.API(auth)
 
 ow=csv.writer(open(OUT_FILE,'w',encoding="utf-8"),delimiter="\t")
-keyword="屋良朝博"
+keyword="keyword"
 search_count=100
 repeat_count=100
 
